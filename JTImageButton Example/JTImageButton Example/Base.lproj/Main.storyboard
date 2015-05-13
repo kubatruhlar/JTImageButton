@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSp-aZ-xTn" userLabel="CenterXHelper">
+                                <rect key="frame" x="160" y="113" width="1" height="342"/>
+                                <color key="backgroundColor" red="0.89304226636886597" green="0.89317077398300171" blue="0.89301407337188721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="99A-n5-hgg"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmh-qf-hlQ" customClass="JTImageButton">
+                                <rect key="frame" x="41" y="201" width="238" height="50"/>
+                                <color key="backgroundColor" red="0.062385157179999998" green="0.87339115140000001" blue="0.44247202600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="h52-uQ-3SE"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ry5-Hu-mhC" customClass="JTImageButton">
+                                <rect key="frame" x="41" y="143" width="238" height="50"/>
+                                <color key="backgroundColor" red="0.062385157179999998" green="0.87339115140000001" blue="0.44247202600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LgY-NS-eQa"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jt-N5-5MN" customClass="JTImageButton">
+                                <rect key="frame" x="41" y="259" width="238" height="50"/>
+                                <color key="backgroundColor" red="0.062385157179999998" green="0.87339115140000001" blue="0.44247202600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kDo-Ar-P15"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOx-dm-6WP" customClass="JTImageButton">
+                                <rect key="frame" x="41" y="317" width="238" height="50"/>
+                                <color key="backgroundColor" red="0.062385157179999998" green="0.87339115140000001" blue="0.44247202600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="n6u-f4-p66"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cP-Ic-3Ib" customClass="JTImageButton">
+                                <rect key="frame" x="41" y="375" width="238" height="50"/>
+                                <color key="backgroundColor" red="0.062385157179999998" green="0.87339115140000001" blue="0.44247202600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hLm-le-fj7"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92547899484634399" green="0.94127476215362549" blue="0.94513434171676636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="NSp-aZ-xTn" secondAttribute="centerY" id="1Bp-t9-nvB"/>
+                            <constraint firstItem="NSp-aZ-xTn" firstAttribute="top" secondItem="Ry5-Hu-mhC" secondAttribute="bottom" constant="-80" id="2i4-Bn-f8R"/>
+                            <constraint firstItem="IOx-dm-6WP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="25" id="5ex-mc-nsU"/>
+                            <constraint firstAttribute="centerY" secondItem="7Jt-N5-5MN" secondAttribute="centerY" id="CXu-4A-BmA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ry5-Hu-mhC" secondAttribute="trailing" constant="25" id="Cb0-Wn-rmu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wmh-qf-hlQ" secondAttribute="trailing" constant="25" id="CiQ-Vv-99s"/>
+                            <constraint firstItem="7Jt-N5-5MN" firstAttribute="top" secondItem="wmh-qf-hlQ" secondAttribute="bottom" constant="8" id="DFy-gs-KNL"/>
+                            <constraint firstItem="IOx-dm-6WP" firstAttribute="top" secondItem="7Jt-N5-5MN" secondAttribute="bottom" constant="8" id="Hqu-ST-MMf"/>
+                            <constraint firstAttribute="centerX" secondItem="NSp-aZ-xTn" secondAttribute="centerX" constant="-0.5" id="Laa-tN-al1"/>
+                            <constraint firstItem="7Jt-N5-5MN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="25" id="Pk7-E8-M4n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6cP-Ic-3Ib" secondAttribute="trailing" constant="25" id="T1c-GS-Agp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IOx-dm-6WP" secondAttribute="trailing" constant="25" id="d0Q-sK-raG"/>
+                            <constraint firstItem="6cP-Ic-3Ib" firstAttribute="top" secondItem="IOx-dm-6WP" secondAttribute="bottom" constant="8" id="ghA-PI-tvH"/>
+                            <constraint firstItem="wmh-qf-hlQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="25" id="l2N-2Y-516"/>
+                            <constraint firstItem="6cP-Ic-3Ib" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="25" id="o4E-Ei-VCP"/>
+                            <constraint firstItem="Ry5-Hu-mhC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="25" id="uvA-3u-kFH"/>
+                            <constraint firstItem="wmh-qf-hlQ" firstAttribute="top" secondItem="Ry5-Hu-mhC" secondAttribute="bottom" constant="8" id="xC8-Yv-7ct"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Jt-N5-5MN" secondAttribute="trailing" constant="25" id="yUC-Qw-mYo"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnCross" destination="wmh-qf-hlQ" id="7Zy-lD-H3Z"/>
+                        <outlet property="btnFive" destination="6cP-Ic-3Ib" id="2V2-X9-0Z7"/>
+                        <outlet property="btnFour" destination="IOx-dm-6WP" id="l35-X4-3n3"/>
+                        <outlet property="btnMagnifier" destination="7Jt-N5-5MN" id="vxt-cf-a6m"/>
+                        <outlet property="btnTick" destination="Ry5-Hu-mhC" id="jrd-ZU-yIl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23" y="393"/>
+        </scene>
+    </scenes>
+</document>
