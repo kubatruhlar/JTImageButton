@@ -77,11 +77,11 @@ typedef enum {
  IconHeight if you wish to resize your UIImage (Keeping aspect ratio) - Final image quality could be different - Default: JTImageButtonIconHeightDefault (Scaled by title to be +/- the same height)
  IconOffsetY if you need to move icon vertically, negative values allowed. Default: JTImageButtonIconOffsetYNone
  */
-- (void)createTitle:(NSString *)title withIcon:(UIImage *)icon font:(UIFont *)titleFont iconHeight:(CGFloat)iconHeight iconOffsetY:(CGFloat)iconOffsetY;
+- (void)createTitle:(NSString *)titleText withIcon:(UIImage *)iconImage font:(UIFont *)titleFont iconHeight:(CGFloat)iconHeight iconOffsetY:(CGFloat)iconOffsetY;
 
 /**
  Without IconHeight if you wish to let icon image as is (Original size)
  */
-- (void)createTitle:(NSString *)title withIcon:(UIImage *)icon font:(UIFont *)titleFont iconOffsetY:(CGFloat)iconOffsetY;
+- (void)createTitle:(NSString *)titleText withIcon:(UIImage *)iconImage font:(UIFont *)titleFont iconOffsetY:(CGFloat)iconOffsetY;
 
 @end

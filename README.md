@@ -1,7 +1,7 @@
 # JTImageButton
 With the regular UIButton you are able to set title and also image for that button but that content *WILL NOT* be centered horizontally (only title will). 
 
-**JTImageButton** is a UIButton subclass that makes title+image work easier. Your image and title together WILL BE centered horizontally. You will be also able to resize provided image and change it’s color easier, so basically all you have to provide is a text as a title and image (*NO MORE* image asset editing to get an image that you want in a button).
+**JTImageButton** is a UIButton subclass that makes *TITLE+IMAGE* work easier. Your image and title together WILL BE centered horizontally. You will be also able to resize provided image and change it’s color easier, so basically all you have to provide is a text as a title and image (*NO MORE* image asset editing to get an image that you want in a button).
 
 <h3 align="center">
   <img src="https://github.com/kubatru/JTImageButton/blob/master/Screens/img_example.png" alt="Example"/>
@@ -36,19 +36,21 @@ Or to keep *original image size* use `-(void)createTitle:withIcon:font:iconOffse
 @property (nonatomic, strong) UIColor *titleColor;
 @property (nonatomic, assign) UIColor *iconColor;
 @property (nonatomic, strong) UIColor *bgColor;
-
-// Small/Medium/Big/None
-@property (nonatomic, assign) JTImageButtonPadding padding;
-@property (nonatomic, assign) CGFloat cornerRadius;
 @property (nonatomic, strong) UIColor *borderColor;
+
+@property (nonatomic, assign) JTImageButtonPadding padding; // Small/Medium/Big/None
+@property (nonatomic, assign) CGFloat cornerRadius;
 @property (nonatomic, assign) CGFloat borderWidth;
 
-// Left/Right
-@property (nonatomic, assign) JTImageButtonIconSide iconSide;
+@property (nonatomic, assign) JTImageButtonIconSide iconSide; // Left/Right
 @property (nonatomic, assign) CGFloat highlightAlpha;
 ```
 
 ## Changelog
+
+### v1.0.1 - 05.28.15
+- [**UPDATE**] Little refactoring
+
 ### v1.0.0 - 05.13.15
 - [**NEW**] Initial commit
 

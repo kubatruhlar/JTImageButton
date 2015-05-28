@@ -10,7 +10,7 @@
 
 @interface JTImageButton()
 
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *titleText;
 @property (nonatomic, strong) UIImage *iconImage;
 @property (nonatomic, strong) UIFont *titleFont;
 @property (nonatomic, assign) CGFloat iconHeight;
@@ -51,11 +51,11 @@
     
 }
 
-- (void)createTitle:(NSString *)title withIcon:(UIImage *)icon font:(UIFont *)titleFont iconHeight:(CGFloat)iconHeight iconOffsetY:(CGFloat)iconOffsetY {
+- (void)createTitle:(NSString *)titleText withIcon:(UIImage *)iconImage font:(UIFont *)titleFont iconHeight:(CGFloat)iconHeight iconOffsetY:(CGFloat)iconOffsetY {
     
     _keepOriginalHeight = false;
-    self.title = title;
-    self.icon = icon;
+    self.titleText = titleText;
+    self.iconImage = iconImage;
     self.titleFont = titleFont;
     self.iconHeight = iconHeight;
     self.iconOffsetY = iconOffsetY;
@@ -66,8 +66,9 @@
     [self initialize];
 }
 
-- (void)createTitle:(NSString *)title withIcon:(UIImage *)icon font:(UIFont *)titleFont iconOffsetY:(CGFloat)iconOffsetY {
-    [self createTitle:title withIcon:icon font:titleFont iconHeight:icon.size.height iconOffsetY:iconOffsetY];
+- (void)createTitle:(NSString *)titleText withIcon:(UIImage *)iconImage font:(UIFont *)titleFont iconOffsetY:(CGFloat)iconOffsetY {
+    
+    [self createTitle:titleText withIcon:iconImage font:titleFont iconHeight:iconImage.size.height iconOffsetY:iconOffsetY];
     
     _keepOriginalHeight = true;
 }
@@ -94,7 +95,7 @@
     }
     
     // Create whole title
-    [self setAttributedTitle:[self createStringWithImage:_iconImage string:_title color:_titleColor iconPosition:_iconSide padding:_padding andIconOffsetY:_iconOffsetY] forState:UIControlStateNormal];
+    [self setAttributedTitle:[self createStringWithImage:_iconImage string:_titleText color:_titleColor iconPosition:_iconSide padding:_padding andIconOffsetY:_iconOffsetY] forState:UIControlStateNormal];
     [self setNeedsLayout];
     
     [self layoutIfNeeded];
@@ -206,15 +207,15 @@
 }
 
 #pragma mark - Setters
-- (void)setTitle:(NSString *)title {
-    _title = title;
-    if (!_title) {
-        _title = @"";
+- (void)setTitleText:(NSString *)titleText {
+    _titleText = titleText;
+    if (!_titleText) {
+        _titleText = @"";
     }
 }
 
-- (void)setIcon:(UIImage *)icon {
-    _iconImage = icon;
+- (void)setIconImage:(UIImage *)iconImage {
+    _iconImage = iconImage;
 }
 
 - (void)setTitleFont:(UIFont *)titleFont {
