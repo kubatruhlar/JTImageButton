@@ -11,7 +11,7 @@
 @interface JTImageButton()
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) UIImage *icon;
+@property (nonatomic, strong) UIImage *iconImage;
 @property (nonatomic, strong) UIFont *titleFont;
 @property (nonatomic, assign) CGFloat iconHeight;
 @property (nonatomic, assign) CGFloat iconOffsetY;
@@ -52,6 +52,7 @@
 }
 
 - (void)createTitle:(NSString *)title withIcon:(UIImage *)icon font:(UIFont *)titleFont iconHeight:(CGFloat)iconHeight iconOffsetY:(CGFloat)iconOffsetY {
+    
     _keepOriginalHeight = false;
     self.title = title;
     self.icon = icon;
@@ -66,17 +67,9 @@
 }
 
 - (void)createTitle:(NSString *)title withIcon:(UIImage *)icon font:(UIFont *)titleFont iconOffsetY:(CGFloat)iconOffsetY {
+    [self createTitle:title withIcon:icon font:titleFont iconHeight:icon.size.height iconOffsetY:iconOffsetY];
+    
     _keepOriginalHeight = true;
-    self.title = title;
-    self.icon = icon;
-    self.titleFont = titleFont;
-    self.iconHeight = icon.size.height;
-    self.iconOffsetY = iconOffsetY;
-    
-    self.borderWidth = 1.0;
-    self.cornerRadius = 3.0;
-    
-    [self initialize];
 }
 
 - (void)initialize {
@@ -96,12 +89,12 @@
     [self.layer setBorderColor:_borderColor.CGColor];
     
     // Icon overlay
-    if (_iconColor && _icon) {
-        _icon = [self overlayImage:_icon withColor:_iconColor];
+    if (_iconColor && _iconImage) {
+        _iconImage = [self overlayImage:_iconImage withColor:_iconColor];
     }
     
     // Create whole title
-    [self setAttributedTitle:[self createStringWithImage:_icon string:_title color:_titleColor iconPosition:_iconSide padding:_padding andIconOffsetY:_iconOffsetY] forState:UIControlStateNormal];
+    [self setAttributedTitle:[self createStringWithImage:_iconImage string:_title color:_titleColor iconPosition:_iconSide padding:_padding andIconOffsetY:_iconOffsetY] forState:UIControlStateNormal];
     [self setNeedsLayout];
     
     [self layoutIfNeeded];
@@ -116,7 +109,6 @@
     if (!_borderColor) { _borderColor = kFlatGreenColor;}
     if (!_borderWidth) { _borderWidth = 0.0;}
     if (!_iconSide) { _iconSide = JTImageButtonIconSideLeft;}
-    if (!_iconColor) { _iconColor = nil;}
     
     if (!_highlightAlpha) { _highlightAlpha = 0.7;}
 }
@@ -165,11 +157,11 @@
         NSDictionary *attributes = @{NSForegroundColorAttributeName : color};
         NSAttributedString *aString;
         
-        if (padding == JTImageButtonPaddingSmall && _icon) {
+        if (padding == JTImageButtonPaddingSmall && _iconImage) {
             aString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@", string] attributes:attributes];
-        } else if (padding == JTImageButtonPaddingMedium && _icon){
+        } else if (padding == JTImageButtonPaddingMedium && _iconImage){
             aString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"  %@", string] attributes:attributes];
-        } else if (padding == JTImageButtonPaddingBig && _icon){
+        } else if (padding == JTImageButtonPaddingBig && _iconImage){
             aString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"   %@", string] attributes:attributes];
         } else {
             aString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", string] attributes:attributes];
@@ -222,7 +214,7 @@
 }
 
 - (void)setIcon:(UIImage *)icon {
-    _icon = icon;
+    _iconImage = icon;
 }
 
 - (void)setTitleFont:(UIFont *)titleFont {
@@ -239,25 +231,25 @@
     [self layoutIfNeeded];
     
     if (iconHeight == JTImageButtonIconHeightDefault) {
-        _iconHeight = MIN(fabs([_titleFont pointSize]), _icon.size.height);
+        _iconHeight = MIN(fabs([_titleFont pointSize]), _iconImage.size.height);
     } else if (_keepOriginalHeight == false) {
-        _iconHeight = MIN(iconHeight, _icon.size.height);
+        _iconHeight = MIN(iconHeight, _iconImage.size.height);
     } else {
         _iconHeight = iconHeight;
     }
     
-    if (!_icon) {
+    if (!_iconImage) {
         return;
     }
-    if (_icon.size.height > _iconHeight) {
-        _icon = [self scaleImage:_icon proportionallyToHeight:_iconHeight];
+    if (_iconImage.size.height > _iconHeight) {
+        _iconImage = [self scaleImage:_iconImage proportionallyToHeight:_iconHeight];
     }
 }
 
 - (void)setIconOffsetY:(CGFloat)iconOffsetY {
     _iconOffsetY = iconOffsetY;
     
-    if (!_icon) {
+    if (!_iconImage) {
         return;
     }
     
