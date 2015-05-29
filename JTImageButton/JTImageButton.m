@@ -15,7 +15,6 @@
 @property (nonatomic, strong) UIFont *titleFont;
 @property (nonatomic, assign) CGFloat iconHeight;
 @property (nonatomic, assign) CGFloat iconOffsetY;
-@property (nonatomic, assign) bool keepOriginalHeight;
 
 @end
 
@@ -53,7 +52,6 @@
 
 - (void)createTitle:(NSString *)titleText withIcon:(UIImage *)iconImage font:(UIFont *)titleFont iconHeight:(CGFloat)iconHeight iconOffsetY:(CGFloat)iconOffsetY {
     
-    _keepOriginalHeight = false;
     self.titleText = titleText;
     self.iconImage = iconImage;
     self.titleFont = titleFont;
@@ -69,8 +67,6 @@
 - (void)createTitle:(NSString *)titleText withIcon:(UIImage *)iconImage font:(UIFont *)titleFont iconOffsetY:(CGFloat)iconOffsetY {
     
     [self createTitle:titleText withIcon:iconImage font:titleFont iconHeight:iconImage.size.height iconOffsetY:iconOffsetY];
-    
-    _keepOriginalHeight = true;
 }
 
 - (void)initialize {
@@ -233,10 +229,8 @@
     
     if (iconHeight == JTImageButtonIconHeightDefault) {
         _iconHeight = MIN(fabs([_titleFont pointSize]), _iconImage.size.height);
-    } else if (_keepOriginalHeight == false) {
-        _iconHeight = MIN(iconHeight, _iconImage.size.height);
     } else {
-        _iconHeight = iconHeight;
+        _iconHeight = MIN(iconHeight, _iconImage.size.height);
     }
     
     if (!_iconImage) {

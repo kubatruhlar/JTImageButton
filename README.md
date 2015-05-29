@@ -31,7 +31,12 @@ Or to keep *original image size* use `-(void)createTitle:withIcon:font:iconOffse
           iconOffsetY:JTImageButtonIconOffsetYNone];
 ```
 
-**Another properties**
+**Icon height logic:**
+`iconHeight` < `original image` … result: *scaled*
+`iconHeight` >= `original image` … result: *original image*
+`iconHeight` == `0` OR `JTImageButtonIconHeightDefault` … result: *scaled by title*
+
+**Another properties:**
 ```objective-c
 @property (nonatomic, strong) UIColor *titleColor;
 @property (nonatomic, assign) UIColor *iconColor;
