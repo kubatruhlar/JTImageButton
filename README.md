@@ -1,14 +1,14 @@
 # JTImageButton
-With the regular UIButton you are able to set title and also image for that button but that content *WILL NOT* be centered horizontally (only title will). 
+With the regular `UIButton` you are able to set title and also image for that button but that content **WILL NOT** be centered horizontally (only title will). 
 
-**JTImageButton** is a UIButton subclass that makes *TITLE+IMAGE* work easier. Your image and title together WILL BE centered horizontally. You will be also able to resize provided image and change it’s color easier, so basically all you have to provide is a text as a title and image (*NO MORE* image asset editing to get an image that you want in a button).
+**JTImageButton** is a `UIButton` subclass that makes **TITLE+IMAGE** work easier. Your image and title together **WILL BE** centered horizontally. You will be also able to resize provided image and change it’s color easier, so basically all you have to provide is a text as a title and image (**NO MORE** image asset editing to get an image that you want in a button).
 
 <h3 align="center">
   <img src="https://github.com/kubatru/JTImageButton/blob/master/Screens/img_example.png" alt="Example"/>
 </h3>
 
 ## Installation
-There are two ways to add the JTImageButton library to your project. Add it as a regular library or install it through CocoaPods.
+There are two ways to add the **JTImageButton** library to your project. Add it as a regular library or install it through **CocoaPods**.
 
 `pod 'JTImageButton'`
 
@@ -18,11 +18,11 @@ There are two ways to add the JTImageButton library to your project. Add it as a
 
 Create UIButton in your `.xib/storyboard` with `IBOutlet` and set class to `JTImageButton` (Also button type should be `Custom`) OR `initWithFrame` if you need it programatically.
 
-Use `-(void)createTitle:withIcon:font:iconHeight:iconOffsetY:`
+Use `- (void)createTitle:withIcon:font:iconHeight:iconOffsetY:`
 
-Or to keep *original image size* use `-(void)createTitle:withIcon:font:iconOffsetY:`
+Or to keep *original image size* use `- (void)createTitle:withIcon:font:iconOffsetY:`
 
-**Standard example:**
+### Standard example:
 ```objective-c
 [self.btn createTitle:@"DONE" 
           withIcon:[UIImage imageNamed:@"icon_tick"] 
@@ -32,15 +32,16 @@ Or to keep *original image size* use `-(void)createTitle:withIcon:font:iconOffse
 ```
 
 
-**Icon height logic:**
+### Icon height logic:
 
-`iconHeight` < `original image` … result: *scaled*
+`iconHeight` < `original image` -> **scaled**
 
-`iconHeight` >= `original image` … result: *original image*
+`iconHeight` >= `original image` -> **original image**
 
-`iconHeight` == `0` OR `JTImageButtonIconHeightDefault` … result: *scaled by title*
+`iconHeight` == `0` OR `JTImageButtonIconHeightDefault` -> **scaled by title**
 
-**Another properties:**
+
+### Another properties:
 ```objective-c
 @property (nonatomic, strong) UIColor *titleColor;
 @property (nonatomic, assign) UIColor *iconColor;
