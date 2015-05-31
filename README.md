@@ -63,7 +63,7 @@ Or to keep *original image size* use `- (void)createTitle:withIcon:font:iconOffs
 ```
 
 <h3 align="center">
-  <img src="https://github.com/kubatru/JTImageButton/blob/master/Screens/with_effect.gif” alt=“With simple effect“/>
+  <img src="https://github.com/kubatru/JTImageButton/blob/master/Screens/with_effect.gif" alt=“With simple effect“ width="320"/>
 </h3>
 
 ## Changelog
