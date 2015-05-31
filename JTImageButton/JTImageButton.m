@@ -47,7 +47,26 @@
     } else {
         self.alpha = 1.0;
     }
+}
+
+- (void)setSelected:(BOOL)selected {
+    [super setSelected:selected];
     
+    if (selected) {
+        self.alpha = _highlightAlpha;
+    } else {
+        self.alpha = 1.0;
+    }
+}
+
+- (void)setEnabled:(BOOL)enabled {
+    [super setEnabled:enabled];
+    
+    if (enabled) {
+        self.alpha = 1.0;
+    } else {
+        self.alpha = _disableAlpha;
+    }
 }
 
 - (void)createTitle:(NSString *)titleText withIcon:(UIImage *)iconImage font:(UIFont *)titleFont iconHeight:(CGFloat)iconHeight iconOffsetY:(CGFloat)iconOffsetY {
@@ -95,6 +114,32 @@
     [self setNeedsLayout];
     
     [self layoutIfNeeded];
+    
+    // Simple effect
+    UIControlEvents applyEffectEvents = UIControlEventTouchDown | UIControlEventTouchDragInside | UIControlEventTouchDragEnter;
+    [self removeTarget:self action:@selector(applyTouchEffect) forControlEvents:applyEffectEvents];
+    [self addTarget:self action:@selector(applyTouchEffect) forControlEvents:applyEffectEvents];
+    
+    UIControlEvents dismissEffectEvents = UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchDragOutside | UIControlEventTouchDragExit | UIControlEventTouchCancel;
+    [self removeTarget:self action:@selector(dismissTouchEffect) forControlEvents:dismissEffectEvents];
+    [self addTarget:self action:@selector(dismissTouchEffect) forControlEvents:dismissEffectEvents];
+}
+
+#pragma mark - Touch effect
+- (void)applyTouchEffect {
+    if (_touchEffectEnabled) {
+        [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.transform = CGAffineTransformMakeScale(1.05, 1.05);
+        } completion:nil];
+    }
+}
+
+- (void)dismissTouchEffect {
+    if (_touchEffectEnabled) {
+        [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            self.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        } completion:nil];
+    }
 }
 
 #pragma mark - Default setup
@@ -108,6 +153,8 @@
     if (!_iconSide) { _iconSide = JTImageButtonIconSideLeft;}
     
     if (!_highlightAlpha) { _highlightAlpha = 0.7;}
+    if (!_disableAlpha) { _disableAlpha = 0.5;}
+    if (!_touchEffectEnabled) { _touchEffectEnabled = false;}
 }
 
 #pragma mark - JTImageButton logic
@@ -301,6 +348,16 @@
 
 - (void)setHighlightAlpha:(CGFloat)highlightAlpha {
     _highlightAlpha = fabs(highlightAlpha);
+    [self initialize];
+}
+
+- (void)setDisableAlpha:(CGFloat)disableAlpha {
+    _disableAlpha = fabs(disableAlpha);
+    [self initialize];
+}
+
+- (void)setTouchEffectEnabled:(BOOL)touchEffectEnabled {
+    _touchEffectEnabled = touchEffectEnabled;
     [self initialize];
 }
 

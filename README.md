@@ -12,7 +12,11 @@ There are two ways to add the **JTImageButton** library to your project. Add it 
 
 `pod 'JTImageButton'`
 
-**Library require iOS 7.0 and above target**
+You may also quick try the example project with
+
+`pod try JTImageButton`
+
+**Library requires target iOS 7.0 and above**
 
 ## Usage and Customization
 
@@ -54,9 +58,19 @@ Or to keep *original image size* use `- (void)createTitle:withIcon:font:iconOffs
 
 @property (nonatomic, assign) JTImageButtonIconSide iconSide; // Left/Right
 @property (nonatomic, assign) CGFloat highlightAlpha;
+@property (nonatomic, assign) CGFloat disableAlpha;
+@property (nonatomic, assign) BOOL touchEffectEnabled;
 ```
 
+<h3 align="center">
+  <img src="https://github.com/kubatru/JTImageButton/blob/master/Screens/with_effect.gif” alt=“With simple effect“/>
+</h3>
+
 ## Changelog
+
+### v1.0.2 - 05.31.15
+- [**NEW**] Enable and selected states added
+- [**NEW**] Basic touchEffect added
 
 ### v1.0.1 - 05.30.15
 - [**UPDATE**] Another little refactoring

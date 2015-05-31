@@ -58,20 +58,22 @@
     self.btnMagnifier.highlightAlpha = 0.8;
     
     // Example four
-    [self.btnFour createTitle:@"Discover" withIcon:[UIImage imageNamed:@"icon_magnifier"] font:[UIFont systemFontOfSize:21.0] iconHeight:JTImageButtonIconHeightDefault iconOffsetY:JTImageButtonIconOffsetYNone];
+    [self.btnFour createTitle:@"Disabled" withIcon:[UIImage imageNamed:@"icon_magnifier"] font:[UIFont systemFontOfSize:21.0] iconHeight:JTImageButtonIconHeightDefault iconOffsetY:JTImageButtonIconOffsetYNone];
     self.btnFour.titleColor = flatPurpleColor;
     self.btnFour.iconColor = flatPurpleColor;
     self.btnFour.padding = JTImageButtonPaddingSmall;
     self.btnFour.borderColor = flatPurpleColor;
     self.btnFour.iconSide = JTImageButtonIconSideLeft;
+    self.btnFour.enabled = false;
     
     // Example five
-    [self.btnFive createTitle:@"DONE" withIcon:[UIImage imageNamed:@"icon_tick"] font:[UIFont systemFontOfSize:21.0] iconHeight:JTImageButtonIconHeightDefault iconOffsetY:1.0];
+    [self.btnFive createTitle:@"WITH EFFECT" withIcon:[UIImage imageNamed:@"icon_tick"] font:[UIFont systemFontOfSize:21.0] iconHeight:JTImageButtonIconHeightDefault iconOffsetY:1.0];
     self.btnFive.titleColor = flatOrangeColor;
     self.btnFive.iconColor = flatOrangeColor;
     self.btnFive.padding = JTImageButtonPaddingSmall;
     self.btnFive.borderColor = flatOrangeColor;
     self.btnFive.iconSide = JTImageButtonIconSideLeft;
+    self.btnFive.touchEffectEnabled = true;
     
     // JTImageButton programatically
 //    JTImageButton *btn = [[JTImageButton alloc] initWithFrame:CGRectMake(10, 50, 300, 50)];

@@ -66,9 +66,19 @@ typedef enum {
 @property (nonatomic, assign) JTImageButtonIconSide iconSide;
 
 /**
- The alpha of the button when highlighted. The default highlightAlpha is 0.7.
+ The alpha of the button when highlighted. The default highlightAlpha is 0.7f.
  */
 @property (nonatomic, assign) CGFloat highlightAlpha;
+
+/**
+ The alpha of the button when disabled. The default disableAlpha is 0.5f.
+ */
+@property (nonatomic, assign) CGFloat disableAlpha;
+
+/**
+ The effect of the button when touched. The default touchEffectEnabled is NO.
+ */
+@property (nonatomic, assign) BOOL touchEffectEnabled;
 
 /**
  Title of the button - Default: @""
