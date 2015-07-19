@@ -1,3 +1,7 @@
+[![Version](https://img.shields.io/cocoapods/v/JTImageButton.svg)](http://cocoapods.org/pods/JTImageButton)
+[![License](https://img.shields.io/cocoapods/l/JTImageButton.svg)](http://cocoapods.org/pods/JTImageButton)
+[![Platform](https://img.shields.io/cocoapods/p/JTImageButton.svg)](http://cocoapods.org/pods/JTImageButton)
+
 # JTImageButton
 With the regular `UIButton` you are able to set title and also image for that button but that content **WILL NOT** be centered horizontally (only title will). 
 
