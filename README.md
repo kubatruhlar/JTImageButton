@@ -8,7 +8,7 @@ With the regular `UIButton` you are able to set title and also image for that bu
 **JTImageButton** is a `UIButton` subclass that makes **TITLE+IMAGE** work easier. Your image and title together **WILL BE** centered horizontally. You will be also able to resize provided image and change it’s color easier, so basically all you have to provide is a text as a title and image (**NO MORE** image asset editing to get an image that you want in a button).
 
 <h3 align="center">
-  <img src="https://github.com/kubatru/JTImageButton/blob/master/Screens/img_example.png" alt="Example"/>
+  <img src="https://github.com/kubatruhlar/JTImageButton/blob/master/Screens/img_example.png" alt="Example"/>
 </h3>
 
 ## Installation
