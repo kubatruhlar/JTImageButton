@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JTImageButton"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "JTImageButton is a UIButton subclass that makes TITLE+IMAGE work easier."
 
   s.description  = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.author    = "Jakub Truhlar"
   s.social_media_url   = "http://kubatruhlar.cz"
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/kubatruhlar/JTImageButton.git", :tag => "1.0.2" }
+  s.source       = { :git => "https://github.com/kubatruhlar/JTImageButton.git", :tag => "1.0.3" }
   s.source_files  = "JTImageButton/*"
   s.framework  = "UIKit"
   s.requires_arc = true
